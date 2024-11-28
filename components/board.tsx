@@ -149,7 +149,7 @@ export default function Board({
               </div>
             ))}
           </div>
-          <div className="flex justify-between *:w-full flex-col md:flex-row w-full m-auto mb-2 text-xl">
+          <div className="flex justify-between *:w-full flex-col gap-3 sm:flex-row w-full m-auto mb-2 md:text-xl">
             <div className="flex justify-center flex-col items-center gap-1">
               <span>Player ({player})</span>
               <span className="font-extrabold">{playerScore}</span>

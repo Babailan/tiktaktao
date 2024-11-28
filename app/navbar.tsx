@@ -12,21 +12,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Settings } from "lucide-react";
 import { SelectBotDifficulty } from "@/components/SelectBotDifficulty";
-
-const minusLogoSize = 100;
+import Logo from "./assets/logo.svg";
 
 export default function Navbar() {
   return (
-    <div className="lg:p-10 flex items-center justify-between">
+    <div className="p-5 md:p-10 flex items-center justify-between">
       <div>
-        <Link href={"/"}>
-          <Image
-            src="/logo.svg"
-            alt="tiktaktao"
-            width={300 - minusLogoSize}
-            height={120 - minusLogoSize}
-          />
-        </Link>
+        <Image className="md:max-w-56 max-w-40" src={Logo} alt="tiktaktao" />
       </div>
       <div>
         <Drawer>

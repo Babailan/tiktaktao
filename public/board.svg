@@ -1,9 +1,9 @@
 <svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_12_4)">
-<path d="M250 83.3333L0 83.3333" stroke="white" stroke-width="4"/>
-<path d="M83.3333 -1.19209e-05L83.3333 250" stroke="white" stroke-width="4"/>
-<path d="M166.66 -1.19209e-05L166.66 250" stroke="white" stroke-width="4"/>
-<path d="M250 166.66L0 166.66" stroke="white" stroke-width="4"/>
+<path d="M250 83.3333L0 83.3333" stroke="black" stroke-width="4"/>
+<path d="M83.3333 -1.19209e-05L83.3333 250" stroke="black" stroke-width="4"/>
+<path d="M166.66 -1.19209e-05L166.66 250" stroke="black" stroke-width="4"/>
+<path d="M250 166.66L0 166.66" stroke="black" stroke-width="4"/>
 </g>
 <defs>
 <clipPath id="clip0_12_4">
