@@ -26,12 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <main className="lg:px-20 md:px-10 px-5">{children}</main>
+        <main className="relative h-screen">{children}</main>
         <Footer />
       </body>
     </html>

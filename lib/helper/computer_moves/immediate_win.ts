@@ -1,19 +1,18 @@
-import { BoardPositions } from "@/hooks/useBoard";
+import { BoardPositions, BoardCell } from "@/hooks/useBoard";
 
 export function immediate_win(
   boardPositions: BoardPositions,
-  computer: "x" | "o"
+  target: BoardCell
 ) {
   // Helper function to find the winning move in a line
-  type t = "o" | "x" | 0;
-  function checkLine(line: t[]) {
+  function check_line(line: BoardPositions[0], target: BoardCell) {
     let countComputer = 0;
     let emptyIndex = -1;
 
     for (let i = 0; i < 3; i++) {
-      if (line[i] === computer) {
+      if (line[i] === target) {
         countComputer++;
-      } else if (line[i] === null || line[i] === 0) {
+      } else if (line[i] === null) {
         emptyIndex = i;
       }
     }
@@ -24,7 +23,7 @@ export function immediate_win(
 
   // Check rows for an immediate win
   for (let row = 0; row < 3; row++) {
-    const emptyCol = checkLine(boardPositions[row]);
+    const emptyCol = check_line(boardPositions[row], target);
     if (emptyCol !== -1) {
       return { row, col: emptyCol }; // Winning move found
     }
@@ -37,7 +36,7 @@ export function immediate_win(
       boardPositions[1][col],
       boardPositions[2][col],
     ];
-    const emptyRow = checkLine(column);
+    const emptyRow = check_line(column, target);
     if (emptyRow !== -1) {
       return { row: emptyRow, col }; // Winning move found
     }
@@ -49,7 +48,7 @@ export function immediate_win(
     boardPositions[1][1],
     boardPositions[2][2],
   ];
-  const emptyIndexMain = checkLine(mainDiagonal);
+  const emptyIndexMain = check_line(mainDiagonal, target);
   if (emptyIndexMain !== -1) {
     return { row: emptyIndexMain, col: emptyIndexMain };
   }
@@ -60,7 +59,7 @@ export function immediate_win(
     boardPositions[1][1],
     boardPositions[2][0],
   ];
-  const emptyIndexAnti = checkLine(antiDiagonal);
+  const emptyIndexAnti = check_line(antiDiagonal, target);
   if (emptyIndexAnti !== -1) {
     return { row: emptyIndexAnti, col: 2 - emptyIndexAnti };
   }
